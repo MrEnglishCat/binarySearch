@@ -5,14 +5,14 @@ using System.Linq;
 public class Program
 {
 
-  public static void binarySearch(int[]array, int search)
+  public static int binarySearch(int[]array, int search)
   {
       int middle = 0;
       uint counter = 0;
       double lowBoarder = 0, highBoarder = array.Length-1;      
       while (lowBoarder <= highBoarder)      
       {
-        middle = Convert.ToInt16(Math.Truncate((lowBoarder + highBoarder) / 2));
+        middle = Convert.ToInt32(Math.Truncate((lowBoarder + highBoarder) / 2));
         Console.WriteLine($"50/50: {middle}, LowBoarder: {lowBoarder}, HighBoarder: {highBoarder}.");
         counter += 1;
         if (array[middle] == search) 
@@ -32,6 +32,7 @@ public class Program
                     continue;
                 } 
       }
+      return -1;
   }  
 
   public static void Main()
@@ -47,7 +48,7 @@ public class Program
       {
           myArray[i] = i;
       }
-
+        /// output of array
       for (int i = 0; i < myArray.Length; i++)
       {
           if ((i % 5) == 0)
@@ -58,6 +59,6 @@ public class Program
       
       Console.Write("Input search number: ");
       int searchNumber = int.Parse(Console.ReadLine()); 
-      binarySearch(myArray, searchNumber);   
+      Console.WriteLine(binarySearch(myArray, searchNumber));   
   }
 }
