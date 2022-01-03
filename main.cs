@@ -9,7 +9,7 @@ public class Program
   {
       int middle = 0;
       uint counter = 0;
-      double lowBoarder = 0, highBoarder = array.Length;      
+      double lowBoarder = 0, highBoarder = array.Length-1;      
       while (lowBoarder <= highBoarder)      
       {
         middle = Convert.ToInt16(Math.Truncate((lowBoarder + highBoarder) / 2));
