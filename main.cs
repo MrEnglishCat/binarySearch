@@ -5,10 +5,11 @@ using System.Linq;
 public class Program
 {
 
-  public static int binarySearch(int[]array, int search)
+  public static bool binarySearch(int[]array, int search)
   {
       int middle = 0;
       uint counter = 0;
+      bool find = false;
       double lowBoarder = 0, highBoarder = array.Length-1;      
       while (lowBoarder <= highBoarder)      
       {
@@ -18,6 +19,7 @@ public class Program
         if (array[middle] == search) 
         {
             Console.WriteLine($"Value: {array[middle]}, Index of array: {middle}, Counter: {counter}.");
+            find = true;
         
             break;
         } else if (array[middle] < search)
@@ -32,14 +34,13 @@ public class Program
                     continue;
                 } 
       }
-      return -1;
+      
+      return find;
   }  
 
   public static void Main()
   {
       uint number = 0;
-      //double lowBoarder = 0, highBoarder = 0;
-      //int middle = 0;
       Console.Write($"Input numer: ");
       number = uint.Parse(Console.ReadLine());
 
